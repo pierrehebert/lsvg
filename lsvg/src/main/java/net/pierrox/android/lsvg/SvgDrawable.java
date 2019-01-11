@@ -136,7 +136,7 @@ public class SvgDrawable extends Drawable {
 //        if(mCachedBitmap != null) {
 //            canvas.drawBitmap(mCachedBitmap, 0, 0, null);
 //        }
-        canvas.save(Canvas.MATRIX_SAVE_FLAG);
+        canvas.save();
 
         if(mEmboss) {
             float[] hsv = new float[3];
@@ -147,7 +147,7 @@ public class SvgDrawable extends Drawable {
             float dx = getIntrinsicWidth() / EMBOSS_SHADOW_RATIO;
 //            canvas.drawARGB(255, 154, 154, 154);
 
-            canvas.save(Canvas.MATRIX_SAVE_FLAG);
+            canvas.save();
             canvas.translate(-dx, -dx);
             canvas.concat(mMatrix);
             hsv[2] = v * EMBOSS_VALUE_SCALE;
@@ -155,7 +155,7 @@ public class SvgDrawable extends Drawable {
             drawSvgElement(canvas, mSvgRoot);
             canvas.restore();
 
-            canvas.save(Canvas.MATRIX_SAVE_FLAG);
+            canvas.save();
             canvas.translate(dx,  dx);
             canvas.concat(mMatrix);
             hsv[2] = v / EMBOSS_VALUE_SCALE;
@@ -188,7 +188,7 @@ public class SvgDrawable extends Drawable {
     private void drawSvgGroup(Canvas canvas, SvgGroup group) {
         Matrix t = group.getTransform();
         if(t != null) {
-            canvas.save(Canvas.MATRIX_SAVE_FLAG);
+            canvas.save();
             canvas.concat(t);
         }
         for(SvgElement e : group.getChildren()) {
@@ -202,7 +202,7 @@ public class SvgDrawable extends Drawable {
     private void drawSvgPath(Canvas canvas, SvgPath path) {
         Matrix t = path.getTransform();
         if(t != null) {
-            canvas.save(Canvas.MATRIX_SAVE_FLAG);
+            canvas.save();
             canvas.concat(t);
         }
         if(path.fillPaint != null) {
