@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'lsvg'
+
+    publishedGroupId = 'net.pierrox.android'
+    libraryName = 'lsvg'
+    artifact = 'lsvg'
+
+    libraryDescription = 'A lean Android SVG library with elements manipulation capabilities.'
+
+    siteUrl = 'https://github.com/pierrehebert/lsvg'
+    gitUrl = 'https://github.com/pierrehebert/lsvg.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'pierrot'
+    developerName = 'Pierre Hébert'
+    developerEmail = 'pierrox@pierrox.net'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 26
 
@@ -25,3 +49,6 @@ repositories {
     google()
     jcenter()
 }
+
+apply from: new File('../jcenter/install.gradle')
+apply from: new File('../jcenter/bintray.gradle')

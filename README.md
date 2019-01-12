@@ -43,9 +43,20 @@ Some form of interactivity is also enabled through picking: one can retrieve the
 position.
 
 ## Android integration
-LSVG comes with two entry point: a flexible SvgDrawable and a SvgDrawableView, ready to use in your
+LSVG comes with two entry points: a flexible SvgDrawable and a SvgDrawableView, ready to use in your
 xml layout files.
 Drawings can be loaded from assets, resources or files.
+
+## Use in your project
+Add `net.pierrox.android:lsvg:1.0` to your dependencies in your build.gradle file, like this:
+
+```
+dependencies {
+    compile 'net.pierrox.android:lsvg:1.0'
+}
+```
+
+Make sure that `jcenter()` is listed in your repositories.
 
 ## License
 *licensed under the [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)*.
